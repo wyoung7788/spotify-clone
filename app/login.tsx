@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 
 const CLIENT_ID = "6ddd58da55884e819b78f35fa173eafd"
-const REDIRECT_URI = "http://localhost:3000"
+const REDIRECT_URI = "http://localhost:3000/protected/client"
 const scopes = "playlist-read-private user-follow-modify"
 
 const ACCESS_TOKEN_KEY = "ACCESS_TOKEN";

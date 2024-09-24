@@ -1,4 +1,4 @@
-/*
+
 import NextAuth from "next-auth";
 import SpotifyProvider from "next-auth/providers/spotify";
 
@@ -32,4 +32,3 @@ export const authOptions: AuthOptions = {
 }
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST};
-*/
