@@ -1,9 +1,7 @@
 'use client';
 import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
 import UserInfo from "@/app/components/userinfo";
 import Link from "next/link";
-import Playlists from "@/app/components/playlists";
 const Client = () => {
     const { data: session } = useSession();
     

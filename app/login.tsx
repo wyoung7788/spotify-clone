@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { ACCESS_TOKEN, TOKEN_TYPE, EXPIRES_IN, CLIENT_ID} from "./components/shared";
 
 export const REDIRECT_URI = "http://localhost:3000/protected/client"
-export const scopes = "playlist-read-private playlist-read-collaborative user-follow-modify"
+export const scopes = "playlist-read-private playlist-read-collaborative user-follow-modify user-read-private user-read-email"
 
 const authorizeUser = () => {
     const url = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${REDIRECT_URI}&scope=${scopes}&show_dialog=true`;
