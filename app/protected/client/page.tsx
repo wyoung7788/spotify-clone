@@ -1,16 +1,15 @@
-'use client';
-import { useSession } from "next-auth/react";
-import UserInfo from "@/app/components/userinfo";
-import Link from "next/link";
-import { startUp } from "@/app/components/shared";
-import { logOut } from "@/app/components/shared";
 
+import { logoutClick } from "@/app/page";
+import { useSession } from "next-auth/react";
 const Client = () => {
-    const { data: session } = useSession();
-    startUp()
+   // const { data: session } = useSession();
+
     return(
         <div>
             hi
+            <div>
+            <button onClick={logoutClick}>Log out</button>
+            </div>
         </div>
         /*
         <div className="items-center h-screen justify-center text-center text-green-400">
