@@ -9,6 +9,10 @@ const Client = () => {
     const { data: session } = useSession();
     startUp()
     return(
+        <div>
+            hi
+        </div>
+        /*
         <div className="items-center h-screen justify-center text-center text-green-400">
             <div className="mt-10 font-bold text-2xl">
             Welcome to your Spotify Dashboard
@@ -24,7 +28,7 @@ const Client = () => {
             </div>
         <button onClick={logOut}>Log out</button>
         </div>
-
+*/
     )
 }
 

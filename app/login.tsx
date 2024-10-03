@@ -1,14 +1,13 @@
 
 import { useEffect } from "react"
-import { ACCESS_TOKEN, TOKEN_TYPE, EXPIRES_IN, CLIENT_ID, REFRESH_TOKEN} from "./components/shared";
-export const REDIRECT_URI = "http://localhost:3000/protected/client"
-export const scopes = "playlist-read-private playlist-read-collaborative user-follow-modify user-read-private user-read-email"
+import { ACCESS_TOKEN, code, TOKEN_TYPE, EXPIRES_IN, CLIENT_ID, REFRESH_TOKEN, startUp, getAccessToken} from "./components/shared";
+export const REDIRECT_URI = "http://localhost:3000/callback/"
 
 const authorizeUser = () => {
     const url = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${REDIRECT_URI}&scope=${scopes}&show_dialog=true`;
     window.location.href= url;
 };
-
+/*
 //initializing the variables
 const extractTokenFromHash = () =>{
     const hash  = window.location.hash;
@@ -30,25 +29,31 @@ const setItemsInLocalStorage = ({ accessToken, tokenType, expiresIn})=>{
 }
 
 
+
 //refresh tokens can be used for indefinite amount of time
 const handleSpotifyCallback = () => {
-    const { accessToken, tokenType, expiresIn, refreshToken } = extractTokenFromHash();
+    const { accessToken} = getAccessToken(CLIENT_ID, code)
 if (accessToken){
-    setItemsInLocalStorage({accessToken, tokenType, expiresIn})
+    console.log('hi')
+    //setItemsInLocalStorage({accessToken, tokenType, expiresIn})
     window.location.href= '/protected/dashboard';
 
 };
 }
+*/
 
 
 export default function Login() {
+    /*
     useEffect(() => {
+        getAccessToken(CLIENT_ID, code);
         // Handle the Spotify callback if the component is loaded with a hash in the URL
-        if (window.location.hash) {
-            handleSpotifyCallback();
-        }
+        //if (window.location.hash) {
+            //handleSpotifyCallback();
+        //}
     }, []);
-
+*/
+    startUp();
     return (
         <div>
         <div>
