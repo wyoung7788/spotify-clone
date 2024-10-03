@@ -9,9 +9,6 @@ const clientId = CLIENT_ID;
 
 export default function handleSpotifyAuth() {
 
-    const token = localStorage.getItem('refresh_token')
-
-
     return(
         <div>
             hello 

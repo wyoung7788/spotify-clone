@@ -6,54 +6,59 @@ export const REFRESH_TOKEN = "REFRESH_TOKEN";
 export const TOKEN_TYPE = "TOKEN_TYPE";
 export const EXPIRES_IN = "EXPIRES_IN"
 export const CLIENT_ID = "6ddd58da55884e819b78f35fa173eafd"
+const params = new URLSearchParams(window.location.search);
+const code = params.get("code");
 
-export const code = undefined;
 
-if (!code) {
-    redirectToAuthCodeFlow(CLIENT_ID);
-} else {
-    getTokenandProfile(CLIENT_ID, code)
 
+export const logOut = () => {
+    localStorage.removeItem(ACCESS_TOKEN);
+    localStorage.removeItem(EXPIRES_IN);
+    localStorage.removeItem(TOKEN_TYPE);
+    localStorage.removeItem(REFRESH_TOKEN);
+    window.location.href = "http://localhost:3000/"
 }
-    /*
-export const async function requestRefresh = await fetch("https://accounts.spotify.com/api/token", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-      Authorization: `Basic ${Buffer.from(`${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`).toString("base64")}`,
-    },
-    body: `grant_type=refresh_token&refresh_token=${refreshToken}`,
-    cache: "no-cache"
-  });
-  */
-  
 
-export async function getTokenandProfile(clientId: string, code:string){
-    try {
-        const accessToken = await getAccessToken(clientId, code);
-        const profile = await fetchProfile(accessToken);
-        return profile;
-    } catch (error) {
-        console.error("Error fetching token or profile:", error);
+
+export async function startUp() {
+    if (!code) {
+        redirectToAuthCodeFlow(CLIENT_ID);
+    } else {
+
     }
 }
 
 
-export async function fetchProfile(token: string): Promise<any> {
-    const result = await fetch("https://api.spotify.com/v1/me", {
-        method: "GET", headers: { Authorization: `Bearer ${token}` }
-    });
-    console.log(result)
-    return await result.json();
-    
+export async function getTokens(code){
+    const codeVerifier = localStorage.getItem('verifier')
+    const url = "https://accounts.spotify.com/api/token"
+    const payload = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }, 
+        body: new URLSearchParams({
+            client_id: CLIENT_ID,
+            grant_type: 'authorization_code',
+            code, 
+            redirect_uri: REDIRECT_URI,
+            code_verifier: codeVerifier,
+        }),
+    }
+        const body = await fetch(url, payload);
+        const response = await body.json();
+
+        localStorage.setItem('access_token', response.access_token)
+        localStorage.setItem('refresh_token', response.refresh_token)
+    }
 }
+    
+        
 
 export async function redirectToAuthCodeFlow(clientId: string) {
     const verifier = generateCodeVerifier(128);
     const challenge = await generateCodeChallenge(verifier);
-
     localStorage.setItem("verifier", verifier);
-
     const params = new URLSearchParams();
     params.append("client_id", clientId);
     params.append("response_type", "code");
@@ -62,12 +67,12 @@ export async function redirectToAuthCodeFlow(clientId: string) {
     params.append("code_challenge_method", "S256");
     params.append("code_challenge", challenge);
 
+    document.location = `https://accounts.spotify.com/authorize?${params.toString()}`;
 }
 
 function generateCodeVerifier(length: number) {
     let text = '';
     let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
     for (let i = 0; i < length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
@@ -83,15 +88,11 @@ async function generateCodeChallenge(codeVerifier: string) {
         .replace(/=+$/, '');
 }
 
-export function getAuthorizationCode(): string | null {
-    // Extract the "code" parameter from the current URL
-    const queryParams = new URLSearchParams(window.location.search);
-    const code = queryParams.get("code");
 
-    // Return the code if it exists, otherwise null
-    return code;
-}
 
+
+
+/*
 export async function getAccessToken(clientId: string, code: string): Promise<string> {
     const verifier = localStorage.getItem("verifier");
 
@@ -107,18 +108,10 @@ export async function getAccessToken(clientId: string, code: string): Promise<st
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: params
     });
-    const response =  await result.json();
-    const { access_token, refresh_token } = response;
-    return access_token;
+
+    const data  = await result.json()
+    const accessToken = data.access_token
+    return accessToken
 }
-
-
-
-/*
-export const logOut = () => {
-    localStorage.removeItem(ACCESS_TOKEN);
-    localStorage.removeItem(EXPIRES_IN);
-    localStorage.removeItem(TOKEN_TYPE);
-}
-*/
+    */
 
