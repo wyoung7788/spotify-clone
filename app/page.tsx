@@ -65,7 +65,6 @@ export async function fetchUserData(){{
 
 if (currentToken.access_token) {
   const userData = await getUserData();
-  console.log(userData)
 }
   
 
@@ -170,11 +169,11 @@ export default function Home() {
   return (
     <div className="flex items-center">
       <header>
-    <div className="text-green-400 text-5xl mt-6">
+    <div className="text-green-400 text-5xl mt-6 mx-20">
     <Image width={60}src={spotify_logo} alt="Logo"/>
      Spotify Clone
-  </div>
-  </header>
+    </div>
+      </header>
   
   <div className="text-2xl">Music for Everyone</div>
     <div className="mt-6"> 
