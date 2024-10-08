@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
+li {
+  margin-left: 100;
+  float: left;
+}
 
 
 
