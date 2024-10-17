@@ -3,6 +3,31 @@ import { logoutClick } from "@/app/page";
 import { fetchUserData } from "@/app/page";
 import { useEffect, useState } from "react";
 import  Playlists  from "@/app/components/playlists";
+/*
+function getFeaturedPlaylists(){
+
+    const [playlists, setPlaylists] = useState([]);
+    useEffect(()=> {
+        async function fetchPlaylists(){
+            try{
+                const response = await fetch('https://api.spotify.com/v1/browse/featured-playlists?limit=5',{
+                    method: 'GET',
+                    headers: { 'Authorization': 'Bearer ' + currentToken.access_token 
+                    },
+                });
+                const data = await response.json();
+                console.log(data)
+                setPlaylists(data.playlists.items)
+                
+            } catch (error) {
+                console.error('error fetching playlists')
+            }
+        }
+        fetchPlaylists();
+
+    }, []);
+
+*/
 
 const Client = () => {
     const [userData, setUserData] = useState(null);

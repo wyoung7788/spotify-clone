@@ -1,5 +1,4 @@
 'use client'
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 export const REDIRECT_URI = "http://localhost:3000/protected/client"
@@ -10,7 +9,9 @@ export const EXPIRES_IN = "EXPIRES_IN"
 export const CLIENT_ID = "6ddd58da55884e819b78f35fa173eafd"
 export const CLIENT_SECRET = "9505018581594a77958a54aad18a6cc7"
 export const scopes = "playlist-read-private playlist-read-collaborative user-follow-modify user-read-private user-read-email"
-import spotify_logo from './assets/spotify_logo.png'
+import Header from "./components/header";
+import Main from "./components/main";
+
 
 
 const authorizationEndpoint = "https://accounts.spotify.com/authorize";
@@ -144,14 +145,17 @@ async function getUserData() {
   return await response.json();
 }
 
+
+
+
 // Click handlers
-async function loginWithSpotifyClick() {
+export async function loginWithSpotifyClick() {
   await redirectToSpotifyAuthorize();
 }
 
 export async function logoutClick() {
   localStorage.clear();
-  window.location.href = "http:localhost:3000";
+  window.location.href = 'http://localhost:3000/';
 }
 
 async function refreshTokenClick() {
@@ -167,21 +171,9 @@ export default function Home() {
     router.push('/protected/client')
   }
   return (
-    <div className="flex items-center">
-      <header>
-    <div className="text-green-400 text-5xl mt-6 mx-20">
-    <Image width={60}src={spotify_logo} alt="Logo"/>
-     Spotify Clone
-    </div>
-      </header>
-  
-  <div className="text-2xl">Music for Everyone</div>
-    <div className="mt-6"> 
-     <button className="rounded bg-green-400 hover:bg-green-300 text-white font-bold py-2 px-4 border border-green-500"onClick={loginWithSpotifyClick}>Log in </button>
-     </div>
-     <div>
-      <button className="founded bg-green-400 hover:bg-green-300 text-white font-bond py-2 px-4 border border-green-500">Find your next anthem</button>
-     </div>
+    <div>
+      <Header/>
+      <Main/>
     </div>
     
   );
