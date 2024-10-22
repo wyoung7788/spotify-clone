@@ -10,6 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tensorflow-models/mobilenet": "^2.1.1",
+    "@tensorflow/tfjs": "^4.22.0",
     "@types/express": "^5.0.0",
     "axios": "^1.7.7",
     "esrun": "^3.2.26",
