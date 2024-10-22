@@ -54,18 +54,19 @@ export default function Main(){
             <h2>
                 Pick up where you left off.. or discover something new
             </h2>
+            <div className="flex justify-center items-center min-h-screen">
                 {playlists ? (
                     <div className="flex space-x-4">
                         {playlists.map((playlist, index) => (
-                            <div key={index} className="relative">
+                            <div key={index} className="relative group">
                             <img className="hover:bg-slate-100"
                             src={playlist.images[0].url} alt="image" width="200"/>
-                            
                             <a className="absolute inset-0 flex items-center justify-center invisible group-hover:visible bg-slate-200 bg-opacity-50"
                             style={{ width: '200px'}}
                             >
-                                <span className="text-gray-700 group-hover:text-gray-500">
-                                    Call
+                                <span className="text-gray-700 group-hover:text-gray-500 text-sm"
+                                >
+                                   <a href={playlist.external_urls.spotify}>{playlist.name}</a>
                                 </span>
                             </a>
                             </div>
@@ -74,6 +75,7 @@ export default function Main(){
                 ): (
                     <p> Loading playlist...</p>
                 )}
+        </div>
         </div>
     );
 }
