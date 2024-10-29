@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Sources Used:
+Running data analysis:
+1. https://medium.com/@juanfraleonhardt/music-genre-classification-a-machine-learning-exercise-9c83108fd2bb#:~:text=Conclusions,by%20Neural%20Networks%20and%20KNN. 
+
+
 ## Getting Started
 
 First, run the development server:
