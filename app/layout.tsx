@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import Provider from "./clientprovider";
+import NavBar from "./components/navbar";
 
 export const metadata: Metadata = {
   title: "Spotify Clone",

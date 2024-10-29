@@ -51,12 +51,13 @@ export default function Main(){
     }, []);
     return(
         <div>
-            <h2>
+            <h2 className="flex justify-center text-lg">
                 Pick up where you left off.. or discover something new
             </h2>
             <div className="flex justify-center items-center min-h-screen">
                 {playlists ? (
                     <div className="flex space-x-4">
+                        
                         {playlists.map((playlist, index) => (
                             <div key={index} className="relative group">
                             <img className="hover:bg-slate-100"
@@ -66,7 +67,7 @@ export default function Main(){
                             >
                                 <span className="text-gray-700 group-hover:text-gray-500 text-sm"
                                 >
-                                   <a href={playlist.external_urls.spotify}>{playlist.name}</a>
+                                   <a className="text-white"href={playlist.external_urls.spotify}>{playlist.name}</a>
                                 </span>
                             </a>
                             </div>

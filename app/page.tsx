@@ -11,6 +11,7 @@ export const CLIENT_SECRET = "9505018581594a77958a54aad18a6cc7"
 export const scopes = "playlist-read-private playlist-read-collaborative user-follow-modify user-read-private user-read-email"
 import Header from "./components/header";
 import Main from "./components/main";
+import NavBar from "./components/navbar";
 
 
 
@@ -172,7 +173,9 @@ export default function Home() {
   }
   return (
     <div>
+      
       <Header/>
+      <NavBar/>
       <Main/>
     </div>
     
