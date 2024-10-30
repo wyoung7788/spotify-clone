@@ -5,8 +5,8 @@ import React, { useEffect, useState } from "react";
 import { Events } from 'react-scroll';
 
 const registerUser = () => {
-    const url = `/register`;
-    window.location.href = url; // Redirect to login API
+    const url = '/register'
+    window.location.href = url; // Redirect to register page
 };
 
 

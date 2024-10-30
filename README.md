@@ -1,9 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Sources Used:
-Running data analysis:
-1. https://medium.com/@juanfraleonhardt/music-genre-classification-a-machine-learning-exercise-9c83108fd2bb#:~:text=Conclusions,by%20Neural%20Networks%20and%20KNN. 
-
+## Note:
+Creating a user in this application will not create a user in Spotify, this is just to 
+explore how backend data storage is linked to front end. In this case, I will be using 
+a form to create a user (separate from any Spotify data) and storing it in a SQL database.
 
 ## Getting Started
 
