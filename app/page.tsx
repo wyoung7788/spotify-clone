@@ -172,11 +172,21 @@ export default function Home() {
     router.push('/protected/client')
   }
   return (
-    <div>
+    <div className="grid grid-cols-4">
+      <div className="col-span-1">
+        <NavBar/>
+      </div>
+      <div className="col-span-3">
+        <div className="grid grid-rows-4">
+          <div className="row-span-1">
+              <Header/>
+          </div>
+          <div className="row-span-3 bg-zinc-700">
+              <Main/>
+          </div>
+        </div>
+      </div>
       
-      <Header/>
-      <NavBar/>
-      <Main/>
     </div>
     
   );

@@ -73,10 +73,9 @@ li {
 
 .nav-bar{
   margin-left: 2rem;
-  background-color: grey;
+  background-color: #171717;
   height: 100vh;
-  width: 250px;
-  display: flex;
+  width: 200px;
   justify-content: flex-start;
   align-items: center;
   padding: 0 20px;
@@ -84,7 +83,7 @@ li {
 }
 
 .nav-menu-items {
-  gap: 30px;
+  gap: 20px;
   width: 10%;
 }
 
@@ -93,19 +92,10 @@ li {
 }
 
 span{
-  margin-left: 16px;
+  margin-left: 50px;
+  margin-top: 100px;
 }
 
-/*
-.nav-text{
-  display:text;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 8px 0px 8px 16px;
-  list-style: none;
-  height: 60px
-}
-*/
 .nav-text a:hover {
   background-color: #000000;
   color: #fff;

@@ -51,10 +51,7 @@ export default function Main(){
     }, []);
     return(
         <div>
-            <h2 className="flex justify-center text-lg">
-                Pick up where you left off.. or discover something new
-            </h2>
-            <div className="flex justify-center items-center min-h-screen">
+            <div className="flex justify-center items-center min-h-screen bg-zinc-900">
                 {playlists ? (
                     <div className="flex space-x-4">
                         
@@ -65,7 +62,7 @@ export default function Main(){
                             <a className="absolute inset-0 flex items-center justify-center invisible group-hover:visible bg-slate-200 bg-opacity-50"
                             style={{ width: '200px'}}
                             >
-                                <span className="text-gray-700 group-hover:text-gray-500 text-sm"
+                                <span className="text-gray-700 group-hover:text-gray-500 text-sm justify-center"
                                 >
                                    <a className="text-white"href={playlist.external_urls.spotify}>{playlist.name}</a>
                                 </span>

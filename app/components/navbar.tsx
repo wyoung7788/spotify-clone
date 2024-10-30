@@ -14,7 +14,10 @@ export default function NavBar(){
                     return(
                         <li key={index} className={item.cName}>
                             <Link href={item.path}>
+                            <div>
+                            {item.icon}
                             <span>{item.title}</span>
+                            </div>
                             </Link>
                         </li>
                     )
