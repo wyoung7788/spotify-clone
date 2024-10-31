@@ -51,7 +51,9 @@ export default function Main(){
     }, []);
     return(
         <div>
+            <div className="flex">Featured Playlists</div>
             <div className="flex justify-center items-center min-h-screen bg-zinc-900">
+                
                 {playlists ? (
                     <div className="flex space-x-4">
                         

@@ -1,11 +1,24 @@
 
 import { signup } from "../actions/auth"
+import { usersTable } from "../db/schema";
+import { db } from "../db";
 
-const Register = () => {
+export default async function Register(){
 
+    const post = await db.query.usersTable.findMany();
     return(
-        <form className="flex items-center justify-center min-h-screen">
+        <div>
+        <form action={async () => {
+            'use server'
+            await db.insert(usersTable).values({
+                id: 1,
+                age: 20,
+                email: "test@example.com",
+                name: "bob",
+            })
+        }} className="flex items-center justify-center min-h-screen gap-5">
             <div>
+                <div className="font-bold">Register User</div>
             <div>
                 <label htmlFor="name">Name</label>
                 <input id="name" name="name" placeholder= "Name"/>
@@ -18,9 +31,14 @@ const Register = () => {
                 <label htmlFor="password">Password</label>
                 <input id="password" name="password" type="password"/>
             </div>
-            <button type="submit">Sign Up</button>
+            <button className="bg-slate-500 gap-5" type="submit">Sign Up</button>
             </div>
         </form>
+        <div>
+        
+        </div>
+
+        </div>
+
     )
 };
-export default Register;

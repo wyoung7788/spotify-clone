@@ -1,4 +1,7 @@
+import { DiBackbone } from "react-icons/di";
 import { SignupFormSchema, FormState } from "../lib/definitions";
+import { hash } from "bcrypt";
+
 
 export async function signup(state: FormState, formData: FormData) {
     const validatedFields = SignupFormSchema.safeParse({
@@ -15,6 +18,8 @@ if (!validatedFields.success){
 }
 
 const { name, email, password } = validatedFields.data
-const hashedPassword = await 
+const hashedPassword = await hash(password,10)
+
+
 }
 
