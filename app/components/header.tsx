@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { loginWithSpotifyClick } from "../page"
 import React, { useEffect, useState } from "react";
 import { Events } from 'react-scroll';
+import Search from "./search";
 
 const registerUser = () => {
     const url = '/register'
@@ -37,16 +38,21 @@ export default function Header(){
                   Music for Everyone
                 </div>
               </li>
-              <li>
-                <div className="gap:10px">
-                <button className="rounded bg-green-400 hover:bg-green-300 text-white py-2 px-4 border"
+             
+                <Search/>
+ 
+                
+                <div>
+                <button className="rounded ml-5 mr-5 bg-green-400  hover:bg-green-300 text-white py-2 px-4 border"
                   onClick={registerUser}>Register
                 </button>
-                <button className="rounded bg-green-400 hover:bg-green-300 text-white py-2 px-4 border"
+
+                <button className="rounded ml-5 mr-10 bg-green-400 hover:bg-green-300 text-white py-2 px-4 border"
                   onClick={loginWithSpotifyClick}>Log in 
                 </button>
+
                 </div>
-              </li>
+  
               </ul>
             </nav>
           </header>

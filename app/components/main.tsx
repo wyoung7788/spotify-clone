@@ -4,7 +4,7 @@ import { CLIENT_ID, CLIENT_SECRET } from "./auth_pkce";
 //get exitos espana 37i9dQZF1DXaxEKcoCdWHD
 
 //use client code flow to get playlist info without logging in 
-async function getClientFlow(client_id: string, client_secret: string){
+export async function getClientFlow(client_id: string, client_secret: string){
     const authString = btoa(`${client_id}:${client_secret}`);
 
     const response = await fetch("https://accounts.spotify.com/api/token",{
@@ -18,6 +18,7 @@ async function getClientFlow(client_id: string, client_secret: string){
         }),
     });
     const data = await response.json()
+    localStorage.setItem('client_token', data.access_token);
     return data.access_token
 }
 
@@ -50,9 +51,9 @@ export default function Main(){
         fetchToken();
     }, []);
     return(
-        <div>
-            <div className="flex">Featured Playlists</div>
-            <div className="flex justify-center items-center min-h-screen bg-zinc-900">
+        <div className=" bg-zinc-900">
+            <div className="flex p-5 text-xl ">Featured Playlists</div>
+            <div className="flex justify-center items-center min-h-screen">
                 
                 {playlists ? (
                     <div className="flex space-x-4">
