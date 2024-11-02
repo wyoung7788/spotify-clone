@@ -13,11 +13,11 @@ export default function Search(){
     }
     return(
         <div>
-        <input className="bg-gray-400 rounded-md"type="text"
-        id="inputId" placeholder="Search for..." 
+        <input className="bg-gray-400 rounded-md w-45 h-8"type="text"
+        id="inputId" placeholder="What do you want to play?" 
         value={inputValue}
         onChange={(e)=> setValue(e.target.value)}/>
-        <button onClick={launchSearch}>
+        <button onClick={launchSearch} className="p-5">
             Search 
         </button>
         

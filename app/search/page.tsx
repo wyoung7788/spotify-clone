@@ -1,11 +1,11 @@
 'use client'
 import { useState } from "react";
 import { goHome } from "../register/page";
-
+// create tabs: all, artists, songs, albums, playlists
 export default function Search(){
     //set the inputValue to storage if it exists
     const [inputValue, setInputValue] = useState(localStorage.getItem('search') || "");
-    //priorities to load: 1) artist 2) song 3) playlist 4) album
+    //priorities to load: 1) artist 2) song 3) album 4) playlist
     const [artists, setArtists] = useState([])
     const [songs, setSongs] = useState([])
     const [playlists, setPlaylists] = useState([])
@@ -56,7 +56,9 @@ export default function Search(){
         </div>
 
       
-      
+          <div>
+            Top Result
+          </div>
           
           <h2>Artists</h2>
           {artists.length > 0 ? (

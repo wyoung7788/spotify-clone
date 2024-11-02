@@ -12,12 +12,17 @@ export default function NavBar(){
             <ul className="nav-menu-items flex flex-col items-center">
                 {SidebarData.map((item, index) => {
                     return(
-                        <li key={index} className={item.cName}>
+                        <li key={index} className={item.cName} >
                             <Link href={item.path}>
-                            <div>
+                            
+                            <span className="flex gap-3">
+                                <div className="mt-1.5">
                             {item.icon}
-                            <span>{item.title}</span>
                             </div>
+                            <div className="flex">
+                                {item.title}
+                                </div>
+                                </span>
                             </Link>
                         </li>
                     )
