@@ -1,14 +1,13 @@
-import { config } from 'dotenv';
-import { defineConfig } from 'drizzle-kit';
 
-config({ path: '.env' });
-
-export default defineConfig({
-  schema: 'app/db/schema.ts',
-  out: './migrations',
-  dialect: 'turso',
-  dbCredentials: {
-    url: "libsql://expert-rapture-wyoung.turso.io"!,
-    authToken: process.env.TURSO_AUTH_TOKEN!,
-  },
-});
+import type { Config } from 'drizzle-kit';
+import * as dotenv from 'dotenv';
+dotenv.config();
+export default {
+    schema: 'app/db/schema.ts',
+    out: './migrations',
+    driver: "turso",
+    dbCredentials: {
+        url: process.env.VITE_TURSO_URL as string,
+        authToken: process.env.VITE_TURSO_AUTH_TOKEN as string,
+    }
+} satisfies Config;

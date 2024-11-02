@@ -3,17 +3,27 @@ import { signup } from "../actions/auth"
 import { usersTable } from "../db/schema";
 import { db } from "../db";
 
-const goHome = () => {
+
+export const goHome = () => {
     const url = '/'
     window.location.href = url; // Redirect to home page
 };
 
+    // this handle function should call multiple types
+    // first let's call artist 
+    // define a function that let's us pass in a type 
 
 export default async function Register(){
 
-    const post = await db.query.usersTable.findMany();
     return(
+        <div></div>
+    )
+    const post = await db.query.usersTable.findMany();
+    /*
+    return(
+        
         <div>
+            
         <form action={async () => {
             'use server'
             await db.insert(usersTable).values({
@@ -41,6 +51,7 @@ export default async function Register(){
             <button onClick={goHome}className="mt-5 ml-5">Go Home</button>
             </div>
         </form>
+        
         <div>
             
             </div>
@@ -49,4 +60,5 @@ export default async function Register(){
 
 
     )
+        */
 };
