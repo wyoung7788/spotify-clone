@@ -30,24 +30,20 @@ export default function Header(){
               <ul className="flex items-center justify-between">
               
               <li className="text-green-400 text-5xl mt-6 mx-20">
-                <div>
+
                 <Image width={60}src={spotify_logo} alt="Logo"/>
-                </div>
-                Spotify 
-                <div className="text-2xl text-white">
-                  Music for Everyone
-                </div>
+
               </li>
              
                 <Search/>
  
                 
                 <div>
-                <button className="rounded ml-5 mr-5 bg-green-400  hover:bg-green-300 text-white py-2 px-4 border"
-                  onClick={registerUser}>Register
+                <button className="rounded ml-5 mr-5 hover:bg-green-300 text-gray-200 py-2 px-4"
+                  onClick={registerUser}>Sign up
                 </button>
 
-                <button className="rounded ml-5 mr-10 bg-green-400 hover:bg-green-300 text-white py-2 px-4 border"
+                <button className="rounded ml-5 mr-10 p-5 bg-white hover:bg-gray-50 text-black py-2 px-4 border"
                   onClick={loginWithSpotifyClick}>Log in 
                 </button>
 

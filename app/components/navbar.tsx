@@ -9,7 +9,7 @@ export default function NavBar(){
     return(
         <IconContext.Provider value={{color: "undefined"}}>
             <div className="nav-bar">
-            <ul className="nav-menu-items flex flex-col items-center">
+            <ul className="nav-menu-items flex flex-col items-center text-gray-300">
                 {SidebarData.map((item, index) => {
                     return(
                         <li key={index} className={item.cName} >

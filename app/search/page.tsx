@@ -1,6 +1,20 @@
-'use client'
+
+import * as React from 'react'
 import { useState } from "react";
 import { goHome } from "../register/page";
+
+export default function Page() {
+  return (
+    <ul className="list">
+      <li>Answering “What ARIA can I use?”</li>
+      <li>Privacy Principles for the Web</li>
+      <li>Stepping forward on WAI management</li>
+      <li>W3C Accessibility Maturity Model</li>
+    </ul>
+  );
+}
+
+/*
 // create tabs: all, artists, songs, albums, playlists
 export default function Search(){
     //set the inputValue to storage if it exists
@@ -67,12 +81,9 @@ export default function Search(){
                             <div key={index} className="relative group">
                             <img className="hover:bg-slate-100"
                             src={artist.images[0].url} alt={artist.name} width="200"/>
-                            <a className="absolute inset-0 flex items-center justify-center invisible group-hover:visible bg-slate-200 bg-opacity-50"
+                            <a className="absolute inset-0 flex items-center justify-center invisible"
                             style={{ width: '200px'}}
                             >
-                                <span className="text-gray-700 group-hover:text-gray-500 text-sm justify-center"
-                                > {artist.name}
-                                </span>
                             </a>
                             </div>
                         ))}
@@ -85,3 +96,4 @@ export default function Search(){
    );
    
 }
+   */

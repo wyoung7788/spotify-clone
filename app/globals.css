@@ -6,11 +6,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Spotify Mix';
+  src: url('/fonts/SpotifyMix-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Spotify Mix', sans-serif;
 }
 
 li {

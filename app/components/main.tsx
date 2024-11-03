@@ -65,10 +65,14 @@ export default function Main() {
 
     return (
         <div className="bg-zinc-900">
+            <div className="flex">
+
             <div className="flex p-5 text-xl font-semibold">Featured Playlists</div>
+            <div className="justify-right"> Show all </div>
+            </div>
             <div className="flex p-5 justify-left">
                 {loadingPlaylists ? (
-                    <p>Loading playlists...</p>
+                    <p></p>
                 ) : (
                     <div className="flex space-x-4">
                         {playlists.map((playlist, index) => (
@@ -90,7 +94,7 @@ export default function Main() {
             <div className="flex p-5 text-xl font-semibold">New Releases</div>
             <div className="flex p-5 justify-left">
                 {loadingReleases ? (
-                    <p>Loading new releases...</p>
+                    <p></p>
                 ) : (
                     <div className="flex space-x-4">
                         {newReleases.map((album, index) => (
