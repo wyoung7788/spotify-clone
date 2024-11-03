@@ -12,6 +12,7 @@ export const scopes = "playlist-read-private playlist-read-collaborative user-fo
 import Header from "./components/header";
 import Main from "./components/main";
 import NavBar from "./components/navbar";
+import SideBar from "./components/sidebar";
 
 
 
@@ -174,7 +175,7 @@ export default function Home() {
   return (
     <div className="grid grid-cols-4">
       <div className="col-span-1">
-        <NavBar/>
+        <SideBar/>
       </div>
       <div className="col-span-3">
         <div className="grid grid-rows-4">
