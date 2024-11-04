@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
 import { CLIENT_ID, CLIENT_SECRET } from "./auth_pkce";
-import spotify_play from "app/assets/spotify_play.png"
 import Image from 'next/image'
 import Popup from "./popup";
 

@@ -48,6 +48,15 @@ li {
 .header{
   position: sticky;
   top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin-top: auto;
 }
 
 .label {
