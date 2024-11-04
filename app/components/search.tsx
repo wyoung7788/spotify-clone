@@ -13,14 +13,17 @@ export default function Search(){
     }
     return(
         <div>
-        <input className="bg-gray-400 rounded-md w-45 h-8"type="text"
-        id="inputId" placeholder="What do you want to play?" 
-        value={inputValue}
-        onChange={(e)=> setValue(e.target.value)}/>
-        <button onClick={launchSearch} className="p-5">
-            Search 
-        </button>
-        
+            <div className="">
+  <div className="searchBar">
+    <div></div>
+    <input className="font-thin text-gray-200 "id="searchQueryInput" type="text" name="searchQueryInput" placeholder="What do you want to play?" value={inputValue}
+    onChange={(e)=> setValue(e.target.value)} 
+    />
+    
+    <button onClick ={launchSearch} id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+    </button>
+  </div>
+</div>
         </div>
         
     )

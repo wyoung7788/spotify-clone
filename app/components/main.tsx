@@ -108,18 +108,17 @@ export default function Main() {
                                 
                                 <img className="hover:bg-slate-100" width={60}
                                 src={playlist.images[0]?.url} alt="Playlist cover" width="200" />
-                                <a className="absolute inset-0 items-center justify-center invisible group-hover:visible bg-slate-200 bg-opacity-50 h-20"
+                                <a className="absolute inset-0 items-center justify-center invisible group-hover:visible h-20"
                                     style={{ width: '200px' }}>
-                                    <span className="text-gray-700 group-hover:justify-center">
                                     <button
                                     onClick={() => handlePopup(<iframe src={playlist.external_urls.spotify} width="300" height="380"></iframe>)}
                                     className="absolute inset-0 items-center justify-center invisible group-hover:visible bg-slate-200 bg-opacity-50 h-20"
                                     style={{ width: '200px' }}
                                 ><Image width={60} src={spotify_play} alt="Logo"/></button>
                                         
-                                    </span>
+
                                 </a>
-                                
+
                             </div>
                             
                         ))}
@@ -148,6 +147,8 @@ export default function Main() {
                                     <a className="text-white" href={album.external_urls.spotify}><Image width={60} src={spotify_play} alt="Logo"/></a>
                                     </span>
                                 </a>
+                            <div className="mt-3">{album.name}</div>
+                            <div>{album.artist}</div>
                             </div>
                         ))}
                     </div>
