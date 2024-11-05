@@ -13,6 +13,7 @@ import Header from "./components/header";
 import Main from "./components/main";
 import NavBar from "./components/navbar";
 import SideBar from "./components/sidebar";
+import MainFooter from "./components/mainfooter";
 
 
 
@@ -186,6 +187,8 @@ export default function Home() {
               <Main/>
         </div>
       </div>
+      <div className="w-[100%] flex"><MainFooter/></div>
+    
     </div>
     
     

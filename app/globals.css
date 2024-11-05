@@ -54,10 +54,12 @@ li {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  margin-top: auto;
+  min-height: 70px;
 }
+
+
 
 .label {
   font-size: .625rem;

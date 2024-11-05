@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import { Events } from 'react-scroll';
 import Search from "./search";
 
-const registerUser = () => {
+export const registerUser = () => {
     const url = '/register'
     window.location.href = url; // Redirect to register page
 };
