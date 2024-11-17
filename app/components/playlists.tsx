@@ -4,6 +4,23 @@ import { Link } from "react-router-dom";
 async function getUserPlaylists() {
     const access_token = localStorage.getItem("access_token")
     const user_id = localStorage.getItem("user_id")
+    const response = await fetch('https://api.spotify.com/v1/me/playlists?limit=8', {
+      method: 'GET',
+      headers: { 'Authorization': 'Bearer ' + access_token },
+
+    });
+    if (!response.ok){
+        console.error('failed to retrieve playlists')
+        return;
+    }
+    const data =  await response.json();
+    console.log('user playlists')
+    return data
+  }
+/*
+async function getUserPlaylists() {
+    const access_token = localStorage.getItem("access_token")
+    const user_id = localStorage.getItem("user_id")
     const response = await fetch(`https://api.spotify.com/v1/users/${user_id}/playlists?limit=5`, {
       method: 'GET',
       headers: { 'Authorization': 'Bearer ' + access_token },
@@ -17,6 +34,8 @@ async function getUserPlaylists() {
     console.log('user playlists')
     return data
   }
+
+*/
 
   //map to show the image, and display name of playlist
 export default function Playlists()  {
@@ -38,10 +57,7 @@ export default function Playlists()  {
 
     return(
         <div>
-           <div>
-            <h2>
-                Your Playlists
-            </h2>
+           <div className="justify-center flex space-x-10">
                 <ul>
                     {playlistData.length > 0? (
                         playlistData.map((playlist, index)=>(

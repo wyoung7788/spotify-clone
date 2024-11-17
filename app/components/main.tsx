@@ -163,9 +163,9 @@ export default function Main() {
                         {housePlaylists.map((playlist, index) => (
                             <div key={index} className="relative group">
                                 <img className="hover:bg-slate-100"
-                                    src={playlist.images[0]?.url} alt="Playlist cover" width="200" />
-                                <a className="absolute inset-0 items-center justify-center invisible group-hover:visible bg-slate-200 bg-opacity-50 h-20"
-                                    style={{ width: '200px' }}>
+                                    src={playlist.images[0]?.url} alt="Playlist cover" width="200"/>
+                                <a className="absolute inset-0 items-center justify-center invisible group-hover:visible bg-slate-200 bg-opacity-50 h-100"
+                                    style={{ width: '150px' }}>
                                     <span className="text-gray-700 group-hover:text-gray-500 text-sm justify-center">
                                     <a className="text-white" href={playlist.external_urls.spotify}><Image width={60} src={spotify_play} alt="Logo"/></a>
                                     </span>

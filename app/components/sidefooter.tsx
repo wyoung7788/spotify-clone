@@ -1,9 +1,9 @@
 export default function SideFooter(){
     return(
         <div>
-            <footer className="footer absolute bottom-0 z-10">
+            <footer className="footer absolute bottom-0 z-10 justify-center flex pl-20 text-center">
             <div className="text-xs">
-                <div className="flex space-x-2 items-center flex-row">
+                <div className="flex space-x-2 flex-row">
                     <div>Legal</div>
                     <div>Safety & Privacy Center</div>
                 </div>

@@ -3,7 +3,7 @@ import * as React from 'react'
 import { useState } from "react";
 import { goHome } from "../register/page";
 
-export default function Page() {
+export default function SearchPage() {
   return (
     <ul className="list">
       <li>Answering “What ARIA can I use?”</li>

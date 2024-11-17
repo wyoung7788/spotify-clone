@@ -46,7 +46,7 @@ export default function Header(){
               </svg>
               </li>
               <li>
-                <Search/>
+                
               </li>
               <li>
                 <button className="font-semibold" 
